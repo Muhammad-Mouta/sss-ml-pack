@@ -18,7 +18,7 @@ The PDF used in the model is a custom PDF that is the weighted sum of (m) Normal
 >>> import numpy as np
 >>> from ml_pack.response_measures import MultimodalDistroModel as MDM
 >>> mdm = MDM(q=[5, 5, 5])  # Initialize a survey with 3 questions each with 5 answers
->>> mdm.R   # The histogram matrix is initialize to all ones
+>>> mdm.R   # The histogram matrix is initialized to all ones
 array([[1, 1, 1, 1, 1],
        [1, 1, 1, 1, 1],
        [1, 1, 1, 1, 1]], dtype=int64)
@@ -66,4 +66,4 @@ array([[1.],
 0.5171777204570516
 ```
 
-For more information about the model and the thought process behind it, we have uploaded the model's chapter in the project's book to this repository.
+For more information about the model and the thought process behind it, we have uploaded the model's chapter in the project's book to this repository (sSs_ml_model.pdf).
