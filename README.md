@@ -1,19 +1,19 @@
 # sss-ml-pack
 The Machine Learning pack for sSs (Smart Survey System): A complete platform for survey posting and taking with smart features.
 
-## What is sSs?
+### What is sSs?
 sSs stands for Smart Survey System. It is a complete platform for survey creation, posting and taking. It was orginally developed as a graduation project to address the problem of long, boring and repetetive opinion surveys. 
 
-## Why do we need Machine Learning in the project?
+### Why do we need Machine Learning in the project?
 The ML in the project is an 'auto-answer' feature. It is used to facilitate the survey taking process on the respondents without degrading the quality of responses. The idea is to use previous responses of a survey to generate new responses which the respondent has to validate. The respndent is free to keep the answers as generated or to change them, which provides feedback to the generative model and thus trains it.
 
-## What is the ML algorithm used?
+### What is the ML algorithm used?
 It is an algorithm inspired by Anomaly Detection in which you choose the parameters of a probability density function based on previous data. However, instead of using the probability density function to validate new responses, it is used to generate (sample) new responses.
 
-## What PDF is used in the model?
+### What PDF is used in the model?
 The PDF used in the model is a custom PDF that is the weighted sum of (m) Normal PDFs with constant variance, where (m) is the number of answers in the survey. We call it Multimodal Normal Disribution. The details of the PDF can be found in the Machine Learning chapter of the project's book uploaded to this repo.
 
-## Usage Example.
+### Usage Example.
 ```python
 >>> import numpy as np
 >>> from ml_pack.response_measures import MultimodalDistroModel as MDM
@@ -54,7 +54,16 @@ array([[1.],
 array([[1.],
        [4.],
        [5.]])
-
+>>> mdm.compute_score([1, 3, 5])   # Compute the validity score of these answers
+1
+>>> mdm.compute_score([1, 3, 2])   # This is how we could use the distribution for Anomaly Detection
+0.6776273605179334
+>>> mdm.compute_score([5, 3, 1]) 
+0.33733328541112795
+>>> mdm.compute_score([5, 5, 1]) 
+0.07189515729275271
+>>> mdm.compute_score([3, 2, 4]) 
+0.5171777204570516
 ```
 
 For more information about the model and the thought process behind it, you can find in this repo the model's chapter in the project's book.
