@@ -11,7 +11,7 @@ The ML in the project is an 'auto-answer' feature. It is used to facilitate the 
 It is an algorithm inspired by Anomaly Detection in which you choose the parameters of a probability density function based on previous data. However, instead of using the probability density function to validate new responses, it is used to generate (sample) new responses.
 
 ### What PDF is used in the model?
-The PDF used in the model is a custom PDF that is the weighted sum of (m) Normal PDFs with constant variance, where (m) is the number of answers in the survey. We call it Multimodal Normal Disribution. The details of the PDF can be found in the Machine Learning chapter of the project's book uploaded to this repo.
+The PDF used in the model is a custom PDF that is the weighted sum of (m) Normal PDFs with constant variance, where (m) is the number of answers for the question. We call it Multimodal Normal Disribution. The details of the PDF can be found in the Machine Learning chapter of the project's book uploaded to this repository.
 
 ### Usage Example.
 ```python
@@ -66,4 +66,4 @@ array([[1.],
 0.5171777204570516
 ```
 
-For more information about the model and the thought process behind it, you can find in this repo the model's chapter in the project's book.
+For more information about the model and the thought process behind it, we have uploaded the model's chapter in the project's book to this repository.
